@@ -1,0 +1,16 @@
+#. 
+#|- License 
+#|- READ.md
+#| - requirements.txt
+#| - setup.py
+#| - .gitignore 
+#| src 
+#| |- __init__.py 
+#| |- data_processing.py 
+#| |- autoencoder.py 
+#| |- visualization.py 
+#| |- scalability_test.py 
+#|
+#|_tests 
+#  |-__init__.py 
+#  |_ test_autoencoder.py
