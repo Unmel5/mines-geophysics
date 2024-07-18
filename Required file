@@ -1,0 +1,30 @@
+#requirement.txt 
+#numpy 
+#pillow
+#matplotlib
+#scipy
+#tensorflow
+#psutil 
+#pandas
+#setup.up 
+
+##from setuptools import setup, find_packages
+#setup(
+    #name='SeismicAutoencoder',
+    #version='0.1.0',
+    #description='Autoencoder for Seismic Data Analysis and Scalability Testing',
+    #author='Your Name',
+    #author_email='your.email@example.com',
+    #packages=find_packages(where="src"),
+    #package_dir={"": "src"},
+    #install_requires=[
+        #'numpy',
+        #'pillow',
+        #'matplotlib',
+        #'scipy',
+        #'tensorflow',
+        #'psutil',
+        #'pandas',
+    #],
+#)
+
