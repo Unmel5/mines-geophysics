@@ -1,0 +1,28 @@
+# Function to plot events in the data in time and shape 
+def visualize_example_events(data, num_events=5):
+    """
+    Plot significant events in the data to analyze time-space events.
+    Args:
+    - data: NumPy array of the data
+    - num_events: number of events to visualize
+    """
+    event_indices = np.linspace(0, data.shape[1] - 1, num_events, dtype=int)
+    plt.figure(figsize=(12, 6))
+    for i, idx in enumerate(event_indices):
+        plt.subplot(num_events, 1, i + 1)
+        plt.plot(data[:, idx])
+        plt.title(f'Event at Index {idx}')
+        plt.xlabel('Time')
+        plt.ylabel('Amplitude')
+    plt.tight_layout()
+    plt.show()
+# Visualize example events in original data
+print("Visualizing example events in time and space...")
+visualize_example_events(original_images[0])
+#one of these for vis + legend
+
+# Interpretation of the spectrogram
+# Each spectrogram represents the frequency content of the signal over time for a specific segment of data.
+# Color intensity represents the power spectral density in dB. Bright colors = higher intensity (strong signal), darker colors = lower intensity (weak signal).
+# Overall uniform distribution of frequency content with variations in intensity indicates the presence of different frequency components.
+# Darker regions suggest lower power spectral density, indicating weaker signals in these segments compared to others.
