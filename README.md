@@ -20,9 +20,6 @@ Autoencoder
     pip install -r requirements.txt
     ```
 ## Usage
-
-### Loading and Preprocessing Images
-
 To load and preprocess seismic images:
 
 ```python
