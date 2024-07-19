@@ -7,19 +7,19 @@ Autoencoder
   performing scalability testing on the autoencoder 
 
 
-## Installation
+#Installation
 
-1. **Clone the repository:**
+1.Clone Repository
     ```sh
     git clone https://github.com/Unmel5/mines-geophysics.git
     cd mines-geophysics
     ```
 
-2. **Install the required packages:**
+2. Install the required packages
     ```sh
     pip install -r requirements.txt
     ```
-##Usage
+#Usage
 To load and preprocess seismic images:
 
 ```python
@@ -28,19 +28,19 @@ from src.data_processing import load_psd_image
 image_path = "path/to/your/image.png"
 image_array = load_psd_image(image_path)
 
-##using the autoencoder 
+# using the autoencoder 
 from src.autoencoder import apply_autoencoder_to_data
 
 image_paths = ["path/to/your/image.png"]
 autoencoder_path = "path/to/your/autoencoder.h5"
 original_images, reconstructed_images = apply_autoencoder_to_data(autoencoder_path, image_paths)
 
-##visualizing spectra 
+# visualizing spectra 
 from src.visualization import visualize_spectra
 
 visualize_spectra(original_images[0], reconstructed_images[0])
 
-##scalability testing 
+# scalability testing 
 from src.scalability_test import execute_scalability_test, plot_scalability_test_results
 
 # Example parameters
@@ -54,12 +54,12 @@ detection_threshold = 1.5
 results_df = execute_scalability_test(durations, samplingrate, stawindowduration, ltawindowduration, stepsizeduration, detection_threshold)
 plot_scalability_test_results(results_df)
 
-##version control 
+#version control 
 git init 
 git add . 
 git commit -m "Initial commit" 
 
-##testing 
+#testing 
 python -m unittest discover -s tests
 For more information, please contact Melissa Unlu at melissa.unlu@mines.edu 
 
