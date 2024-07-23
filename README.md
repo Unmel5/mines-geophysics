@@ -67,7 +67,7 @@ plot_scalability_test_results(results_df)
 2. Add files to the repository:
   git add.
 3. Commit the changes:
-  git commit -m "Initial commit"
+  git commit -m "Your brief commit description"
 
 ##Testing - QUESTION: Isn't the unit testing all focused on the STA/LTA part of the code? Consider moving this up.
 python -m unittest discover -s tests
