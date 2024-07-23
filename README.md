@@ -1,6 +1,5 @@
-# Seismic Autoencoder for STA/LTA Testing and Scalability
-
-This repository contains Python scripts for STA/LTA testing using dascore and implementing an autoencoder for seismic analysis and scalability testing. The scripts include loading and preprocessing seismic images, using a pre-trained autoencoder to reconstruct images, visualizing original and reconstructed spectra, and performing scalability testing on the autoencoder.
+# Seismic STALTA and Autoencoder Testing and Scalability
+This repository contains Python scripts for STA/LTA using DASCore and applying an autoencoder for seismic event detection. These scripts show how to do these analyses, add several unit tests, and carry out serial scalability testing. The scripts include loading and preprocessing seismic data, carrying out event detection (either using STA/LTA or using a pre-trained autoencoder to detect anomalies), visualizing original and reconstructed spectra (a key step to understand the use of the autoencoder), and performing scalability testing to time the STA/LTA and the autoencoder.
 
 ## Table of Contents
 
@@ -10,6 +9,34 @@ This repository contains Python scripts for STA/LTA testing using dascore and im
 4. [Testing](#testing)
 5. [License](#license)
 6. [Contact](#contact)
+
+## STA/LTA Code Use
+##Testing
+python -m unittest discover -s tests
+from src.stalta import execute_stalta, visualize_stalta_results, execute_stalta_scalability_test, plot_stalta_scalability_test_results
+
+# Load and preprocess seismic data
+data_path = "path/to/your/data.file"
+data_array = load_seismic_data(data_path)
+
+# Apply the STA/LTA method to seismic data
+sta_lta_results = execute_stalta(data_array, sampling_rate, sta_window, lta_window, detection_threshold)
+
+# Visualize the STA/LTA results
+visualize_stalta_results(data_array, sta_lta_results)
+
+# Perform scalability testing on the STA/LTA method
+# Example parameters
+durations = [30, 60, 90]  # Example durations
+sampling_rate = 200.0
+sta_window_duration = 0.1
+lta_window_duration = 0.5
+step_size_duration = 0.01
+detection_threshold = 1.5
+
+stalta_results_df = execute_stalta_scalability_test(durations, sampling_rate, sta_window_duration, lta_window_duration, step_size_duration, detection_threshold)
+plot_stalta_scalability_test_results(stalta_results_df)
+
 
 ## Installation
 
@@ -26,7 +53,10 @@ This repository contains Python scripts for STA/LTA testing using dascore and im
 
 ## Usage
 
-To load and preprocess seismic images, apply the autoencoder to seismic data, visualize the original and reconstructed spectra, and perform scalability testing on the autoencoder:
+## Autoencoder Code Use
+
+To load and preprocess seismic DAS data, apply the autoencoder to seismic data, visualize the original and reconstructed spectra, and perform scalability testing on the autoencoder:
+
 
 ```python
 from src.data_processing import load_psd_image
@@ -59,6 +89,7 @@ results_df = execute_scalability_test(durations, samplingrate, stawindowduration
 plot_scalability_test_results(results_df)
 
 ## Version Control
+## Notes on Use of Version Control
 1. Initialize Git:
   git init
 2. Add files to the repository:
