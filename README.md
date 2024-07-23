@@ -1,6 +1,6 @@
-# Seismic Autoencoder for STA/LTA Testing and Scalability
+# Seismic STA/LTA and Autoencoder Testing and Scalability
 
-This repository contains Python scripts for STA/LTA testing using dascore and implementing an autoencoder for seismic analysis and scalability testing. The scripts include loading and preprocessing seismic images, using a pre-trained autoencoder to reconstruct images, visualizing original and reconstructed spectra, and performing scalability testing on the autoencoder.
+This repository contains Python scripts for STA/LTA using DASCore and applying an autoencoder for seismic event detection. These scripts show how to do these analyses, add several unit tests, and carry out serial scalability testing. The scripts include loading and preprocessing seismic data, carrying out event detection (either using STA/LTA or using a pre-trained autoencoder to detect anomalies), visualizing original and reconstructed spectra (a key step to understand the use of the autoencoder), and performing scalability testing to time the STA/LTA and the autoencoder.
 
 ## Table of Contents
 
@@ -23,10 +23,13 @@ This repository contains Python scripts for STA/LTA testing using dascore and im
     ```sh
     pip install -r requirements.txt
     ```
+## STA/LTA Code Use
 
-## Usage
+**Melissa, please add directions similar to the directions below for the autoencoder showing how to run the unit tests and the timing/scalability tests for the STA/LTA method**
 
-To load and preprocess seismic images, apply the autoencoder to seismic data, visualize the original and reconstructed spectra, and perform scalability testing on the autoencoder:
+## Autoencoder Code Use
+
+To load and preprocess seismic DAS data, apply the autoencoder to seismic data, visualize the original and reconstructed spectra, and perform scalability testing on the autoencoder:
 
 ```python
 from src.data_processing import load_psd_image
@@ -58,13 +61,14 @@ detection_threshold = 1.5
 results_df = execute_scalability_test(durations, samplingrate, stawindowduration, ltawindowduration, stepsizeduration, detection_threshold)
 plot_scalability_test_results(results_df)
 
-## Version Control
+## Notes on Use of Version Control
 1. Initialize Git:
   git init
 2. Add files to the repository:
   git add.
 3. Commit the changes:
   git commit -m "Initial commit"
-##Testing
+
+##Testing - QUESTION: Isn't the unit testing all focused on the STA/LTA part of the code? Consider moving this up.
 python -m unittest discover -s tests
 
