@@ -95,7 +95,5 @@ plot_scalability_test_results(results_df)
 2. Add files to the repository:
   git add.
 3. Commit the changes:
-  git commit -m "Initial commit"
-##Testing
-python -m unittest discover -s tests
+git commit -m "Initial commit with STA/LTA and autoencoder scripts"
 
